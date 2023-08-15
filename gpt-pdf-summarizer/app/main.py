@@ -14,7 +14,17 @@ except ImportError:
     
 from services.conversations import Conversations
 from services.summary_service import continue_conversation, set_openai_api_key
-from streamlit_chat import message as chat_message
+try:
+    from streamlit_chat import message as chat_message
+except ImportError:
+    print("Package 'streamlit_chat' not found. Installing...")
+    import subprocess
+    package_name = 'streamlit_chat'
+    subprocess.check_call(['pip', 'install', package_name])
+    print("Package 'streamlit_chat' installed.")
+
+# Now you can use 'chat_message' from the 'streamlit_chat' package in your application logic
+
 
 
 @st.cache_resource
