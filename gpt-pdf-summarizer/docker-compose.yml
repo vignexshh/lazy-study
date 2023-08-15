@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  pdf-summariser:
+    build: .
+    ports:
+      - "8001:8001"
+      - "8501:8501"
+    volumes:
+      - ./app:/app/app
+    environment:
+      - OPENAI_API_KEY={$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}
