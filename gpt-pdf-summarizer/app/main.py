@@ -2,10 +2,19 @@ import io
 from typing import Optional
 
 import requests
-import streamlit as st
+
+try:
+    import streamlit_chat as st
+except ImportError:
+    print("Package 'streamlit_chat' not found. Installing...")
+    import subprocess
+    package_name = 'streamlit_chat'
+    subprocess.check_call(['pip', 'install', package_name])
+    print("Package 'streamlit_chat' installed.")
+    
 from services.conversations import Conversations
 from services.summary_service import continue_conversation, set_openai_api_key
-from st import message as chat_message
+from streamlit_chat import message as chat_message
 
 
 @st.cache_resource
