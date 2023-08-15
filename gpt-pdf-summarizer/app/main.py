@@ -4,7 +4,7 @@ from typing import Optional
 import requests
 
 try:
-    import streamlit_chat as st
+    import streamlit_chat
 except ImportError:
     print("Package 'streamlit_chat' not found. Installing...")
     import subprocess
