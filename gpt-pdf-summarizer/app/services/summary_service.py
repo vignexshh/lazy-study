@@ -13,7 +13,17 @@ except ImportError:
 
 # Continue with your application logic using the 'openai' package
 
-import streamlit as st
+try:
+    import streamlit as st
+except ImportError:
+    print("Package 'streamlit' not found. Installing...")
+    import subprocess
+    package_name = 'streamlit'
+    subprocess.check_call(['pip', 'install', package_name])
+    print("Package 'streamlit' installed.")
+
+# Now you can continue with your application logic using the 'streamlit' package
+
 
 from .conversations import Conversations
 
