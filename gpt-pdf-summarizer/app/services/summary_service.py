@@ -22,14 +22,6 @@ except ImportError:
     subprocess.check_call(['pip', 'install', package_name])
     print("Package 'streamlit' installed.")
 
-try:
-    import streamlit_chat
-except ImportError:
-    print("Package 'streamlit_chat' not found. Installing...")
-    import subprocess
-    package_name = 'streamlit_chat'
-    subprocess.check_call(['pip', 'install', package_name])
-    print("Package 'streamlit_chat' installed.")
 
 # Now you can continue with your application logic using the 'streamlit_chat' package
 
