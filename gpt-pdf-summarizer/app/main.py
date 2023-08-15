@@ -1,5 +1,4 @@
 import io
-import openai 
 from typing import Optional
 
 import requests
