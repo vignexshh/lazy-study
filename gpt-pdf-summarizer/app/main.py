@@ -1,3 +1,4 @@
+import openai
 import io
 from typing import Optional
 
