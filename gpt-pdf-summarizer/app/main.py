@@ -5,7 +5,7 @@ import requests
 import streamlit as st
 from services.conversations import Conversations
 from services.summary_service import continue_conversation, set_openai_api_key
-from streamlit_chat import message as chat_message
+from st import message as chat_message
 
 
 @st.cache_resource
