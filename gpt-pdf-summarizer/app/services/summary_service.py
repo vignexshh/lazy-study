@@ -2,7 +2,17 @@ import os
 import textwrap
 from typing import Optional
 
-import openai
+try:
+    import openai
+except ImportError:
+    print("Package 'openai' not found. Installing...")
+    import subprocess
+    package_name = 'openai'
+    subprocess.check_call(['pip', 'install', package_name])
+    print("Package 'openai' installed.")
+
+# Continue with your application logic using the 'openai' package
+
 import streamlit as st
 
 from .conversations import Conversations
